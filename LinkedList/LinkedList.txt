@@ -1,0 +1,85 @@
+
+| Linked List
+
+• Struktur data yang terdiri dari Node yang saling terhubung. 
+  Setiap Node berisi data/value dan address Node selanjutnya.
+  Linked List terdapat Head(Kepala) yaitu Node pertama, dan 
+  Tail yaitu Node trakhir. Mengambil data node harus dari 
+  Head hingga akhir Node, tidak bisa seperti Array.
+  
+• Tipe Linked List
+  • Single Linked List
+      Head
+    [Node|    ] -> [Node|    ] -> [Node|    ] -> null
+    
+  • Double Linked List
+               Head     ->             ->            -> Next
+    null <- [ |Node| ] <-> [ |Node| ] <-> [ |Node| ] -> null
+                       <-             <-             <- Previous
+    
+  • Circular Linked List
+  
+• Ilustrasi
+  Address:   01   02   03     04   05   06     07 08 09
+  Memori : [6|03] [] [9|04] [1|06] [] [7|null] [] [] []
+            Head                        Tail
+  null   : Kosong
+  Example: [6|03] 
+         : 6 -> Value in Node
+         : 03 -> Next Address Node
+  MyLinkedList: (Value) 6, 9, 1, 7
+  
+• Aplikasi
+  • Map, saat ingin pergi ke suatu tempat akan terdapat tempat² yang
+    dilewati, tempat itu bisa disebut Node.
+  • 
+  
+• Algoritma(Basic Linked List/Single Linked List)
+  • Node
+    Node {
+        data/value
+        Node next
+    }
+  • Add Node
+    "Untuk menambah data menggunakan Tail sebagai Pointer/Penunjuk"
+    function add(data) {
+        "Buat node baru"
+        Node node = new Node(data)
+        if(Head == nul) {
+            "Tetapkan Node baru sebagai Head dan Tail"
+            Head = node
+            Tail = node
+        }
+        else {
+            "Ubah Pointer next Tail ke node baru"
+            Tail.next = node
+            "Pindah Head ke node baru"
+            Tail = node
+        }
+    }
+    Example:
+        Head|Tail
+        ["Joni"|next(null)]
+             Head                    Node baru
+        ["Joni"|next("Amet")] -> ["Amet"|next(null)]
+             Head                       Tail
+        ["Joni"|next("Amet")] -> ["Amet"|next(null)]
+        
+        
+  • Remove Node
+    "Menghapus Node menggunakan Head"
+    function remove() {
+        if(Head == null) {
+            "Linked List kosong"
+            false/error
+        }
+        else {
+           "Ubah Pointer Head ke Node setelah Head"
+            Head = Head.next
+        }
+    }
+    Example:
+              Head                   Node baru
+        ["Joni"|next("Amet")] -> ["Amet"|next(null)]
+                                 Head
+        [null|next(null)]  ["Amet"|next(null)]

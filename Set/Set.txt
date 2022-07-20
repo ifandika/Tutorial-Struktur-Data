@@ -1,0 +1,6 @@
+
+| Set
+
+- Struktur Data Linier yang menyimpan data dengan nomer/index
+  , pada Set data tidak boleh sama. Jika memasukan data yang
+  sudah ada maka data yang dimasukan ditolak.

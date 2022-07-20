@@ -1,0 +1,5 @@
+
+| Array
+
+- Kumpulan beberapa item dari jenis yang sama yang disimpan pada
+  sebuah blok memori. Array berperilaku tetap.

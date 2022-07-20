@@ -1,0 +1,8 @@
+
+| Map
+
+- Struktur Data yang menyimpan key(kunci) dan value(nilai). 
+  Key tidak boleh duplikat/sama, Key digunakan sebagai 
+  identitas untuk menyimpan data.
+
+

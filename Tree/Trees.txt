@@ -1,0 +1,35 @@
+
+| Trees | ADT
+
+- Struktur data abstrak, non-linier, terdiri dari tiap node
+  yang terhubung.
+  
+- Istilah pada Trees
+  - Root/Akar : Node paling atas
+  - Parent/Induk : Node setelah Root
+  - Child/Anak : Node setelah Parent
+  - Sibling/Saudara : Node yang mempunyai Parent yang sama
+  - Leaf Node/Simpul Daun : Node paling akhir/tidak memiliki Child Node
+  - Height of a node/Ketinggian node
+  - Deepth of a node/Kedalaman node
+  - Edge/Jembatan : Penghubung antar node
+  - Height of a tree/Tinggi Pohon : Jumlah node ke akar, jumlah node terbanyak/terdalam
+  - Degree of a node/Derajat node : Jumlah cabang dari node tersebut
+  - Forest/Hutan : 
+
+- Implementasi
+  - Binary Trees | BT
+  - Binary Search Trees | BST
+  - Heaps
+  
+- BFS | Breadth First Traversal
+  - 
+  
+- DFS | Depth First Traversal
+  - Inorder(Left -> Root -> Right)
+  - Preorder(Root -> Left -> Right)
+  - Postorder(Left -> Right -> Root)
+  
+- Aplikasi dari Trees/Pohon
+  - Database
+  - File System

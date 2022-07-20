@@ -1,0 +1,12 @@
+
+| Queue | ADT
+
+- Struktur data abstrak, menggunakan prinsip FIFO(First In First Out)
+  untuk menyimpan data. 2 Operasi dasar enQueue/tambah data, deQueue/
+  hapus data
+  
+- Implementasi
+  - Linked List
+  - Array
+  - Stack
+

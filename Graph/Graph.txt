@@ -1,0 +1,15 @@
+
+| Graph
+
+- Struktur data graph adalah kumpulan node yang memiliki data
+  dan terhubung dengan node lain.
+
+- Terminologi
+  - G = (V, E)
+  - G : Graph
+  - V : Vertek/Vertices
+  - E : Node yang saling terhubung
+
+- Representasi dari Graph
+  - Adjacency Matrix
+  - Adjacency List

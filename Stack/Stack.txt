@@ -1,0 +1,28 @@
+
+| Stack
+
+- Struktur Data Abstrak, seperti tumpukan dan meggunakan prinsip 
+  LIFO(Last In First Out) untuk mengelola/menyimpan data. Data 
+  paling akhir disebut Top/Atas
+  
+- Operasi dasar
+  - push(x) : Menambah data
+  - pop() : Menghapus data paling akhir
+  
+- Ilustrasi
+
+  [ null ]  - push("Joni")           |
+  [ null ]  - push("Yanto")          
+  [ null ]  - pop()                  
+  [ null ]  - push("Mamat")          
+  [ null ]  - getTop() ->            
+  [ null ]  - isEmpty() ->           [ 
+  [ null ]  - size() ->              [ Joni ]
+  
+   Stack
+
+- Aplikasi
+  - 
+  - Undo pada teks editor
+  - Untuk compiler
+
