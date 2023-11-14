@@ -1,0 +1,18 @@
+
+					Struktur Data Heap
+
+| Pendahuluan
+Struktur Data spesial dari Tree, dimana Tree adalah versi 
+lengkap dari Binary Three. Heap boleh berisi data yg sama.
+
+  
+| Operasi dasar
+- heapify = 
+- insertion = Tambah data
+- deletion = Hapus data paling atas atau prioritas tertinggi.
+- peek = Ambil data paling awal di heap.
+
+
+| Jenis heap
+Dibagi mjd 2 yaitu Min-Heap dan Max-Heap.
+- Min-Heap = Data terkecil ada di paling atas(root) 

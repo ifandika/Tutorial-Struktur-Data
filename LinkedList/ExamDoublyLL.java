@@ -1,30 +1,35 @@
 
-class Node<T> {
-	public T data;
-	public Node<T> next;
-	public Node<T> previous;
+class Node {
+	public String data;
+	public Node next;
+	public Node previous;
 	
-	public Node(T data) {
+	public Node(String data) {
 		this.data = data;
 		this.next = null;
 		this.previous = null;
 	}
 }
 
-public class MyDoubleLL<T> {
-	private Node<T> head;
+/**
+ * Doubly Linked List adalah linked list yg dimana node punya pointer data sebelum/kiri
+ * dan selanjutnya/kanan.
+ */
+class DoublyLinkedList {
+	// Head untuk data pertama.
+	private Node head;
 	private int size = 0;
 	
-	public MyDoubleLL() {}
+	public DoublyLinkedList() {}
 	
-	public void addNext(T data) {
-		Node<T> newNode = new Node<>(data);
+	public void addNext(String data) {
+		Node newNode = new Node(data);
 		if(isEmpty()) {
 			this.head = newNode;
 		}
 		else {
 			// Sebagai pointer
-			Node<T> buffer = this.head;
+			Node buffer = this.head;
 			// Cek hingga paling ujung
 			while(buffer != null) {
 				// Data paling akhir karena pointer next null
@@ -41,8 +46,8 @@ public class MyDoubleLL<T> {
 		this.size++;
 	}
 	
-	public void addPrev(T data) {
-		Node<T> newNode = new Node<>(data);
+	public void addPrev(String data) {
+		Node newNode = new Node(data);
 		if(isEmpty()) {
 			this.head = newNode;
 		}
@@ -57,7 +62,7 @@ public class MyDoubleLL<T> {
 		this.size++;
 	}
 	
-	public void addWithIndx(int indx, T data) {
+	public void addWithIndx(int indx, String data) {
 		if(isEmpty()) {
 			throw new RuntimeException("Linked List is empty");
 		}
@@ -65,14 +70,14 @@ public class MyDoubleLL<T> {
 			throw new RuntimeException("Index lebih besar dari ukuran");
 		}
 		// Pada contoh ini index pada head dimulai dari 1
-		Node<T> bufferHead = this.head;
-		Node<T> newNode = new Node<>(data);
+		Node bufferHead = this.head;
+		Node newNode = new Node(data);
 		// Menggunakan indx untuk menuju node yang dituju
 		while(--indx > 0) {
 			bufferHead = bufferHead.next;
 		}
 		// Sebagai buffer node selanjutnya
-		Node<T> bufferNext = bufferHead.next;
+		Node bufferNext = bufferHead.next;
 		// Ubah pointer node sebelumnya ke node baru
 		bufferHead.next = newNode;
 		// Ubah pointer prev node baru ke node sebelumnya
@@ -91,14 +96,14 @@ public class MyDoubleLL<T> {
 		if(indx < 1) {
 			throw new IllegalArgumentException("Input wrong");
 		}
-		Node<T> bufferHead = this.head;
+		Node bufferHead = this.head;
 		while(--indx > 0) {
 			bufferHead = bufferHead.next;
 		}
 		// Buffer node selanjutnya
-		Node<T> nodeNext = bufferHead.next;
+		Node nodeNext = bufferHead.next;
 		// Buffer node sebelumnya
-		Node<T> nodePrev = bufferHead.previous;
+		Node nodePrev = bufferHead.previous;
 		bufferHead = null;
 		// Ubah pointer
 		nodePrev.next = nodeNext;
@@ -111,7 +116,7 @@ public class MyDoubleLL<T> {
 		if(isEmpty()) {
 			throw new RuntimeException("Linked List is empty");
 		}
-		Node<T> buffer = this.head.next;
+		Node buffer = this.head.next;
 		this.head = null;
 		this.head = buffer;
 		this.size--;
@@ -122,7 +127,7 @@ public class MyDoubleLL<T> {
 		if(isEmpty()) {
 			throw new RuntimeException("Linked List is empty");
 		}
-		Node<T> buffer = this.head;
+		Node buffer = this.head;
 		while(buffer != null) {
 			if(buffer.next.next == null) {
 				buffer.next = null;
@@ -138,7 +143,7 @@ public class MyDoubleLL<T> {
 		if(isEmpty()) {
 			throw new RuntimeException("Linked List is empty");
 		}
-		Node<T> buffer = this.head;
+		Node buffer = this.head;
 		System.out.print("[");
 		while(buffer != null) {
 			System.out.print(buffer.data);
@@ -150,7 +155,7 @@ public class MyDoubleLL<T> {
 		System.out.print("]\n");
 	}
 	
-	public T peek() {
+	public String peek() {
 		if(isEmpty()) {
 			throw new RuntimeException("Linked List is empty");
 		}
@@ -165,9 +170,13 @@ public class MyDoubleLL<T> {
 		return this.size;
 	}
 	
+}
+
+public class ExamDoublyLL {
+	
 	public static void main(String[] args) {
 		
-		DoubleLL<String> doubleLL = new DoubleLL<>();
+		DoublyLinkedList doubleLL = new DoublyLinkedList();
 		
 		doubleLL.addNext("Jupri");
 		doubleLL.addNext("Amet");

@@ -1,10 +1,7 @@
-public class MyLinkedListBT {
-	
-	
+public class ExamSkewedBinaryTree {
 	
 	public static void main(String[] args) {
 		
 		
 	}
-	
 }

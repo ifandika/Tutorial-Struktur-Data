@@ -30,17 +30,54 @@ public class MyReverseLL<T> {
 		}
 	}
 	
+	/**
+	 * Menggunakan rekursif untuk membalikan node.
+	 * Lakukan penjelajahan sampai node terakhir(tai), jika sampai node terakhir
+	 * maka ubah pointer head ke node terakhir, lalu kembali. Node {bufferNext} 
+	 * sebagai buffer/pointer node saat ini. Ubah pointer {bufferNext} ke node.next.
+	 * Lalu arahkan pointer next {bufferNext} ke node sebelumnya. Lalu hapus pointer
+	 * next node sebelumnya.
+	 * 
+	 * == Ilustrasi ==
+	 * 
+	 * head = [1] -> [2] -> [3] -> null
+	 * 
+	 * node [1]
+	 * data.next(node 2)
+	 *		-> node [2]
+	 *			 data.next(node 3)
+	 *					-> node [3]
+	 *						 data.next(null)
+	 *								-> head = node [3]
+	 *									 return
+	 * 
+	 * create Node buffer
+	 * [1] -> [2] -> [3] -> null
+	 * 
+	 * buffer = node [3].next
+	 * [1] -> [2] -> [3] -> buffer
+	 * 
+	 * buffer.next = node [3]
+	 * [1] -> [2] -> [3] -> buffer | Sebelum
+	 * [1] -> [2] -> [3] <-> buffer | Sesudah. 2 Pointer next, dari node [3] dan node buffer
+	 * 
+	 * Hapus pointer node [3]
+	 * node [3].next = null
+	 * [1] -> [2] -> [3] <- buffer
+	 * 
+	 * "Ulangi sampai paling kiri"
+	 * 
+	 * Hasil:
+	 * null <- [1] <- [2] <- [3]
+	 */
 	public void reverseLL(Node<T> data) {
 		if(data.next == null) {
 			this.head = data;
 			return;
 		}
 		reverseLL(data.next);
-		// Sebagai pointer node selanjutnya
 		Node<T> bufferNext = data.next;
-		// Ubah pointer ke node sebelumnya
 		bufferNext.next = data;
-		// Karena pointer sudah diganti maka kita hapus pointer sebelumnya
 		data.next = null;
 	}
 	
@@ -65,11 +102,11 @@ public class MyReverseLL<T> {
 		reverse.add("Jpri");
 		reverse.add("Janto");
 		
+		// Sebelum | ["Joni"] -> ["Jpri"] -> ["Janto"] -> null
 		reverse.reverseLL(reverse.head);
+		// Sesudah | null <- ["Joni"] <- ["Jpri"] <- ["Janto"]
 		
 		reverse.display();
-		
-		
 	}
 	
 }

@@ -1,0 +1,31 @@
+					Get Level Node
+
+| Pendahuluan
+  Mencaritahu node/data yang dicari berada di level berapa, node paling atas
+  /root adalah level 1, setiap level ke bawah ditambah 1.
+
+
+| Algoritma
+A. Kondisi
+	- Gunakan rekursif.
+	- Cek jika node = null maka return 0.
+	- Cek jika data node saat ini = data yang dicari maka return level(int).
+	- Telusuri ke kiri hingga akhir, jika belum ketemu geser ke kanan.
+	- Setiap penelusuran hasil + 1.
+
+B. Algoritma
+	function getLevel(Node root, int data) {
+		return getLevelHelper(root, data, 1);
+	}
+
+	function getLevelHelper(Node root, int data, int level) {
+		if(root == null) return 0;
+		if(root.data = data) return level;
+		
+		int bufferLevel = getLevelHelper(root.left, data, level+1);
+		if(bufferLevel != 0)
+			return bufferLevel;
+
+		bufferLevel = getLevelHelper(root.right, data, level+1);
+		return bufferLevel;
+	}

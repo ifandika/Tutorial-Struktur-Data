@@ -1,0 +1,41 @@
+
+			Travesal in Binary Search Tree
+
+| Inorder Travesal
+  Menjelajah dari paling kiri bawah lalu ke atas lalu ke kanan hingga
+  paling bawah.
+  
+  function inorderTravesal(Node root) {
+	if(root != null) {
+		inorderTravesal(root.left);
+		// Print console
+		inorderTravesal(root.right);
+	}
+  }
+  
+  
+| Preorder Travesal
+  Menjelajah data dari root(paling atas) lalu turun ke kiri hingga mentok
+  lalu pindah ke sisi kanan hingga paling akhir.
+  
+  function preorderTraversal(Node root) {
+	if(root != null) {
+		// Print data
+		preorderTraversal(root.left);
+		preorderTraversal(root.right);
+	}
+  }
+
+
+| Postorder Traversal
+  Menjelajah data setiap subtree dari kiri paling bawah lalu ke kanan lalu
+  naik ke atas hingga root, kemudian subtree lainya.
+  
+  function inorderTravesal(Node root) {
+	if(root != null) {
+		inorderTravesal(root.left);
+		inorderTravesal(root.right);
+		// Print console
+	}
+  }
+  

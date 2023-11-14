@@ -1,8 +1,13 @@
 
-| Trees | ADT
 
-- Struktur data abstrak, non-linier, terdiri dari tiap node
-  yang terhubung.
+				STRUKTUR DATA TREE
+				 Maulana Ifandika
+
+
+
+| Pendahuluan
+	Struktur data abstrak, non-linier, terdiri dari tiap node
+	yang terhubung, tersusun secara hirarki.
   
 - Istilah pada Trees
   - Root/Akar : Node paling atas

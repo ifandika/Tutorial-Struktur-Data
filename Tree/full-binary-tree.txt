@@ -1,0 +1,31 @@
+
+| Full Binary Tree
+
+- Tipe khusus dari binary tree dimana setiap childern/parent memiliki
+	2 buah node childern atau tidak.
+- Contoh:
+					(1)
+				 /	\
+			 (2)	(3)
+			/	 \
+		(4)  (5)
+	Full Binary Tree
+
++ Alur
+	- Cek jika simpul kiri/kanan kosong maka kembalian true
+	- Jika tidak kosong maka ulangi untuk simpul kiri sampai paling bawah,
+		dan simpul kanan sampai bawah, hingga setiap kedua sisi simpul kosong.
+		Jika hanya salah satu sisi yang kosong maka tidak full binary tree.
+
+- Kode/Implementasi
+	
+	if(root == null) {
+		return true;
+	}
+	if(root.left == null && root.right == null) {
+		return true;
+	}
+	if((root.left != null) && (root.right != null)) {
+		return (thisFunction(root.left) && thisFunction(root.right));
+	}
+	return false;

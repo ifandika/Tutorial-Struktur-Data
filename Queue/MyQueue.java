@@ -1,3 +1,7 @@
+/**
+ * Struktur data Queue
+ * 
+ */
 public class MyQueue {
 	private Integer[] dataQueue;
 	private int front;
@@ -65,7 +69,7 @@ public class MyQueue {
 	
 	public static void main (String[] args) {
 		
-		Queue queue = new Queue(5);
+		MyQueue queue = new MyQueue(5);
 		
 		System.out.println(queue.enQueue(10));
 		System.out.println(queue.enQueue(5));
@@ -85,7 +89,6 @@ public class MyQueue {
 		System.out.println("size: "+queue.size());
 		System.out.println("isEmpty: "+queue.isEmpty());
 		System.out.println("isFull: "+queue.isFull());
-		
 	}
 	
 }

@@ -1,0 +1,57 @@
+
+| Balanced Binary Tree
+
+•
+
+# Height Balanced
+	• Binary Tree yang balanced(seimbang), diamana jumlah node sisi kiri
+		dan sisi kanan tidak lebih dari 1.
+	
+	# Contoh
+					A												B
+					()											()
+				 /	\									   /  \
+			 ()    ()								 ()    ()
+			/												/
+		()											()
+													    \
+															 ()
+	A = Height Balanced | B = Not Height Balanced
+	
+	# Flow/Alur
+		• Cek jika root kosong maka return(kembalikan) true(benar)
+		• Deklarasi nilai left(kiri) dan right(kanan) node.
+		• Lakukan penjelajahan node kiri, kanan untuk mendapat hasil
+		• Tentukan hasil nilai node kiri dikurangi node kanan jika hasilnya kurang
+			dari sama dengan 1 maka benar.
+			| left = 6, right = 5
+			| hasil = left - right
+			| 1 = 6 - 5
+			| Jika hasil 1/0 maka balanced, jika tidak maka tidak balanced
+			Return(kembalikan) true(benar).
+		• Jika tidak kembalikan false(salah).
+		
+	# Implementasi/Koding
+		
+		function boolean isBalanced(Node root) {
+			if(root == null) {
+				return true;
+			}
+			int left = 0;
+			int right = 0;
+			left = getHeight(root.left);
+			right = getHeight(root.right);
+			if(Math.abs(left - right) && isBalanced(root.left) && isBalanced(root.right)) {
+				return true;
+			}
+			return false;
+		}
+		
+		function int getHeight(Node root) {
+			if(root == null) {
+				return 0;
+			}
+			return 1 + Math.max(getHeight(root.left), getHeight(root.right));
+		}
+	
+	
