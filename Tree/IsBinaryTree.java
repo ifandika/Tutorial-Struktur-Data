@@ -56,14 +56,12 @@ public class IsBinaryTree {
 	 */
 	public void insert(int val) {
 		if(val <= comparison) {
-			System.out.println("Insert left: "+val);
 			if(left == null) {
 				left = new IsBinaryTree(val);
 			} else {
 				left.insert(val);
 			}
 		} else {
-			System.out.println("Insert right: "+val);
 			if(right  == null) {
 				right = new IsBinaryTree(val);
 			} else {

@@ -13,14 +13,18 @@ public class IsBinaryTree2 {
 		bt.insert(2);
 		bt.insert(3);
 		bt.insert(1);
+
+		System.out.println("Max depth: "+bt.getHeight(bt.root));
 		
-		//bt.printInorder();
+		// bt.printInorder();
+		bt.inorder(bt.root);
 		
-		bt.delete(6);
+		bt.delete(5);
 		// System.out.println(bt.root.right.right.left.val);
 		
-		System.out.println();
-		bt.printInorder();
+		// System.out.println("= "+bt.root.right.right.val);/
+		// bt.printInorder();
+		bt.inorder(bt.root);
 	}
 	
 	private Node root;
@@ -33,6 +37,21 @@ public class IsBinaryTree2 {
 		
 		public Node(int val) {
 			this.val = val;
+		}
+	}
+
+	public int getHeight(Node node) {
+		if(node == null) return 0;
+		else {
+			int leftHeight = getHeight(node.left);
+			int rightHeight = getHeight(node.right);
+
+			if(leftHeight > rightHeight) {
+				return leftHeight + 1;
+			}
+			else {
+				return rightHeight + 1;
+			}
 		}
 	}
 	
@@ -50,19 +69,22 @@ public class IsBinaryTree2 {
 		if(node == null) return node;
 		if(key > node.val) {
 			node.right = deleteHelper(node.right, key);
-		} else if(key < node.val) {
+		} 
+		else if(key < node.val) {
 			node.left = deleteHelper(node.left, key);
-		} else {
-			if(node.right != null && node.left == null) {
-				node = node.right;
-				return node;
-			} else if(node.left != null && node.right == null) {
-				node = node.left;
-				return node;
-			} else if(node.right == null) return node.right;
-				else if(node.left == null) return node.left;
+		} 
+		else {
+			// if(node.right != null && node.left == null) {
+			// 	node = node.right;
+			// 	return node;
+			// } else if(node.left != null && node.right == null) {
+			// 	node = node.left;
+			// 	return node;
+			// } 
+			if(node.left == null) return node.right;
+			else if(node.right == null) return node.left;
 			node.val = minValue(node.right);
-			node = deleteHelper(node.right, node.val);
+			node.right = deleteHelper(node.right, node.val);
 		}
 		return node;
 	}
@@ -107,6 +129,14 @@ public class IsBinaryTree2 {
 	private int maxDepth(Node root) {
 		if(root == null) return 0;
 		return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+	}
+
+	public void inorder(Node node) {
+		if(node != null) {
+			inorder(node.left);
+			System.out.print(node.val+" "); 
+			inorder(node.right);
+		}
 	}
 	
 	// Fungsi utama 
